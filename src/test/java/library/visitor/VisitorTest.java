@@ -100,4 +100,21 @@ class VisitorTest {
         assertTrue(result.contains("Java Basics"));
         assertTrue(result.contains("</library>"));
     }
+
+    @Test
+    void shouldCollectAllTitles() {
+        Library library = createLibrary();
+
+        BookTitleVisitor visitor = new BookTitleVisitor();
+
+        List<String> result = library.accept(visitor);
+
+        assertEquals(6, result.size());
+        assertTrue(result.contains("Java Basics"));
+        assertTrue(result.contains("Clean Code"));
+        assertTrue(result.contains("Python Guide"));
+        assertTrue(result.contains("Science Journal"));
+        assertTrue(result.contains("Java E-Book"));
+        assertTrue(result.contains("Tech Magazine"));
+    }
 }

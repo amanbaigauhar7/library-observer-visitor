@@ -39,6 +39,12 @@ Events are represented by immutable LibraryEvent records.
 
 The Visitor Pattern separates operations from the library element classes.
 
+### Adding a New Visitor
+
+BookTitleVisitor was added to collect titles from all library elements.
+No existing element classes or the Visitor interface needed modification.
+This demonstrates the Open/Closed Principle.
+
 ### Composite Structure
 
 The library has the following hierarchy:
