@@ -1,0 +1,11 @@
+
+package library;
+
+public enum EventType {
+    BOOK_AVAILABLE,
+    BOOK_BORROWED,
+    BOOK_RETURNED,
+    BOOK_OVERDUE,
+    RESERVATION_CREATED,
+    VISITOR_REPORT_GENERATED
+}
