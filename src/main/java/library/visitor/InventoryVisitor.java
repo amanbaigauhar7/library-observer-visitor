@@ -55,4 +55,9 @@ public class InventoryVisitor implements Visitor<Integer> {
     public Integer visitMagazine(Magazine magazine) {
         return 0;
     }
+
+    @Override
+    public Integer visitNewspaper(Newspaper newspaper) {
+        return 0;
+    }
 }

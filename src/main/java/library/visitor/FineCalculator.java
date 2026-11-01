@@ -57,4 +57,9 @@ public class FineCalculator implements Visitor<Double> {
     public Double visitMagazine(Magazine magazine) {
         return 0.0;
     }
+
+    @Override
+    public Double visitNewspaper(Newspaper newspaper) {
+        return 0.0;
+    }
 }

@@ -45,6 +45,17 @@ BookTitleVisitor was added to collect titles from all library elements.
 No existing element classes or the Visitor interface needed modification.
 This demonstrates the Open/Closed Principle.
 
+### Adding a New Element
+
+Newspaper was added as a new element type to the library hierarchy.
+
+Unlike adding a new visitor, adding a new element requires:
+- Updating the Visitor interface.
+- Implementing visitNewspaper() in every existing visitor.
+- Creating the Newspaper element class.
+
+This demonstrates the trade-off of the Visitor Pattern: adding new operations is easy, but adding new element types requires updating all visitors.
+
 ### Composite Structure
 
 The library has the following hierarchy:

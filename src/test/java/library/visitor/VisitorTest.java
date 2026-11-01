@@ -16,6 +16,7 @@ class VisitorTest {
         Journal journal = new Journal("Science Journal", 2000);
         EBook ebook = new EBook("Java E-Book", 3000, true);
         Magazine magazine = new Magazine("Tech Magazine", 1500);
+        Newspaper newspaper = new Newspaper("Daily News", 500);
 
         Shelf shelf1 = new Shelf(
                 "Programming Shelf",
@@ -24,7 +25,7 @@ class VisitorTest {
 
         Shelf shelf2 = new Shelf(
                 "Digital Shelf",
-                List.of(book3, ebook, magazine)
+                List.of(book3, ebook, magazine, newspaper)
         );
 
         Section section = new Section(
@@ -84,6 +85,7 @@ class VisitorTest {
         assertTrue(result.contains("Technology"));
         assertTrue(result.contains("Java Basics"));
         assertTrue(result.contains("Science Journal"));
+        assertTrue(result.contains("Daily News"));
     }
 
     @Test
@@ -99,6 +101,7 @@ class VisitorTest {
         assertTrue(result.contains("<shelf"));
         assertTrue(result.contains("Java Basics"));
         assertTrue(result.contains("</library>"));
+        assertTrue(result.contains("<newspaper"));
     }
 
     @Test
@@ -109,12 +112,13 @@ class VisitorTest {
 
         List<String> result = library.accept(visitor);
 
-        assertEquals(6, result.size());
+        assertEquals(7, result.size());
         assertTrue(result.contains("Java Basics"));
         assertTrue(result.contains("Clean Code"));
         assertTrue(result.contains("Python Guide"));
         assertTrue(result.contains("Science Journal"));
         assertTrue(result.contains("Java E-Book"));
         assertTrue(result.contains("Tech Magazine"));
+        assertTrue(result.contains("Daily News"));
     }
 }

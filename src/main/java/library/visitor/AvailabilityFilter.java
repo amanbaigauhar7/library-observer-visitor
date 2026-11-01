@@ -54,4 +54,9 @@ public class AvailabilityFilter implements Visitor<List<Book>> {
     public List<Book> visitMagazine(Magazine magazine) {
         return List.copyOf(availableBooks);
     }
+
+    @Override
+    public List<Book> visitNewspaper(Newspaper newspaper) {
+        return List.copyOf(availableBooks);
+    }
 }

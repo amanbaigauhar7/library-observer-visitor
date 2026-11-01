@@ -85,6 +85,13 @@ public class CatalogXmlVisitor implements Visitor<String> {
                 + "\"/>\n";
     }
 
+    @Override
+    public String visitNewspaper(Newspaper newspaper) {
+        return "      <newspaper title=\"" + escape(newspaper.getTitle())
+                + "\" price=\"" + newspaper.getPrice()
+                + "\"/>\n";
+    }
+
     private String escape(String value) {
         return value.replace("&", "&amp;")
                 .replace("<", "&lt;")

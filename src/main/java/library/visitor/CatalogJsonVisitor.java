@@ -98,6 +98,15 @@ public class CatalogJsonVisitor implements Visitor<String> {
                 + "}";
     }
 
+    @Override
+    public String visitNewspaper(Newspaper newspaper) {
+        return "{\"type\":\"Newspaper\",\"title\":\""
+                + escape(newspaper.getTitle())
+                + "\",\"price\":"
+                + newspaper.getPrice()
+                + "}";
+    }
+
     private String escape(String value) {
         return value.replace("\\", "\\\\")
                 .replace("\"", "\\\"")

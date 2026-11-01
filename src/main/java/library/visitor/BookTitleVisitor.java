@@ -55,4 +55,10 @@ public class BookTitleVisitor implements Visitor<List<String>> {
         titles.add(magazine.getTitle());
         return List.copyOf(titles);
     }
+
+    @Override
+    public List<String> visitNewspaper(Newspaper newspaper) {
+        titles.add(newspaper.getTitle());
+        return List.copyOf(titles);
+    }
 }

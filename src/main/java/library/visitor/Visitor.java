@@ -15,4 +15,6 @@ public interface Visitor<R> {
     R visitEBook(EBook ebook);
 
     R visitMagazine(Magazine magazine);
+
+    R visitNewspaper(Newspaper newspaper);
 }
