@@ -1,4 +1,3 @@
-
 package library;
 
 import library.visitor.Element;
@@ -10,19 +9,20 @@ public class VisitorReportListener implements Observer<LibraryEvent> {
 
     private final Element library;
     private final SectionAggregator aggregator;
+    private final FineCalculator calculator;
 
     public VisitorReportListener(
             Element library,
-            SectionAggregator aggregator
+            SectionAggregator aggregator,
+            FineCalculator calculator
     ) {
         this.library = library;
         this.aggregator = aggregator;
+        this.calculator = calculator;
     }
 
     @Override
     public void onEvent(LibraryEvent event) {
-
-        FineCalculator calculator = new FineCalculator();
 
         double totalFine = library.accept(calculator);
 

@@ -17,6 +17,7 @@ public class Main {
         Journal journal = new Journal("Science Journal", 2000);
         EBook ebook = new EBook("Java E-Book", 3000, true);
         Magazine magazine = new Magazine("Tech Magazine", 1500);
+        Newspaper newspaper = new Newspaper("Daily News", 500);
 
         Shelf shelf1 = new Shelf(
                 "Programming Shelf",
@@ -25,7 +26,7 @@ public class Main {
 
         Shelf shelf2 = new Shelf(
                 "Digital Shelf",
-                List.of(book3, ebook, magazine)
+                List.of(book3, ebook, magazine, newspaper)
         );
 
         Section section = new Section(
@@ -80,8 +81,9 @@ public class Main {
                 statistics
         );
 
+
         VisitorReportListener reportListener =
-                new VisitorReportListener(library, aggregator);
+                new VisitorReportListener(library, aggregator, fineCalculator);
 
         BookAvailabilitySource source = new BookAvailabilitySource();
 
